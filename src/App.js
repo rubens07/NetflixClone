@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import HomeList from './database/tmdb';
 import './App.css';
 
 function App() {
+
+  const [movieList, setMovieList] = useState([]);
+
   useEffect(() => {
-    const dados = HomeList.getHomeList();
-    console.log(dados);
+    HomeList.getHomeList()
+      .then((dados) => {
+        setMovieList(dados);
+      })
   }, []);
 
   return (
