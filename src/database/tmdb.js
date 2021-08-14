@@ -57,6 +57,15 @@ const HomeList =  {
                 items: await basicFetch("/discover/movie?", {with_genres: 99})
             },
         ];
+    },
+    getMovieInfo: async (id, type) => {
+        // type -> 'tv' ou 'movie'
+        let info = {};
+        if (id) {
+            info = await basicFetch(`/${type}/${id}?`, {});
+        }
+
+        return info;
     }
 }
 
