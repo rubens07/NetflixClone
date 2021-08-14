@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import HomeList from './database/tmdb';
+import MovieRow from './components/MovieRow';
 import './App.css';
 
 function App() {
@@ -14,8 +15,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-     Hello World!
+    <div className="page">
+      <section className="lists">
+        {movieList.map((item, key) => (
+          <MovieRow key={key} title={item.title} items={item.items} />
+        ))}
+      </section>
     </div>
   );
 }
