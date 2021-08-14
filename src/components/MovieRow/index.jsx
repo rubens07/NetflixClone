@@ -2,7 +2,6 @@ import React from 'react'
 import './styles.css'
 
 const MovieRow = ({ title, items }) => {
-  console.log(items.results);
   return (
     <div className="movieRow">
       <h2>{title}</h2>
