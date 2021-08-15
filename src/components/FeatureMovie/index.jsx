@@ -1,8 +1,13 @@
 import './styles.css'
 
-const FeatureMovie = ({ item }) => {
+const FeatureMovie = ({ item, size }) => {
   const movieDate = new Date(item.first_air_date);
   const generos = item.genres.map((i) => i.name);
+  let resume = item.overview
+  if (resume.length > size) {
+    resume = resume.substr(0, size).concat("...");
+    console.log(resume);
+  }
 
   return (
     <section className="featured" style={{
@@ -20,7 +25,7 @@ const FeatureMovie = ({ item }) => {
               {item.number_of_seasons} temporada{item.number_of_seasons > 1 ? 's' : ''}
             </div>
           </div>
-          <div className='featured-description'>{item.overview}</div>
+          <div className='featured-description'>{resume}</div>
           <div className='featured-buttons'>
             <a className="featured-watchbutton" href={`/watch/${item.id}`}>
               ► Assistir
