@@ -1,3 +1,15 @@
 .featured {
     height: 100vh; /*tamanho total da tela do monitor*/
 }
+
+.featured-vertical {
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to top, #111 10%, transparent 90%);
+}
+
+.featured-vertical {
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to right, #111 30%, transparent 70%);
+}
