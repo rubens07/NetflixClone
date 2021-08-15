@@ -59,6 +59,12 @@ function App() {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
+
+      <footer>
+        Feito com <span role="img" aria-label="coração">♥</span><br/>
+        Direitos de imagem para <a href="https://www.netflix.com/br/">Netflix</a><br/>
+        Dados obtidos no site <a href="https://www.themoviedb.org/">TMDB</a>
+      </footer>
     </div>
   );
 }
