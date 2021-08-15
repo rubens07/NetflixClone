@@ -7,7 +7,7 @@
 }
 
 .movieRow-listarea {
-    overflow-x: hidden;
+    overflow-x: hidden; /*permite as imagens sairem da tela*/
     padding-left: 30px;
 }
 
