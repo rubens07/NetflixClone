@@ -11,7 +11,7 @@ const FeatureMovie = ({ item }) => {
       backgroundImage: `url(http://image.tmdb.org/t/p/original${item.backdrop_path})`
     }}>
       <div className="featured-vertical">
-        <div className="fatured-horizontal">
+        <div className="featured-horizontal">
           <div className="featured-name">{item.original_name}</div>
           <div className="featured-info">
             <div className="featured-points">{item.vote_average} pontos</div>
@@ -22,8 +22,12 @@ const FeatureMovie = ({ item }) => {
           </div>
           <div className='featured-description'>{item.overview}</div>
           <div className='featured-buttons'>
-            <a href={`/watch/${item.id}`}>►Assistir</a>
-            <a href={`/list/add/${item.id}`}>+ Minha Lista</a>
+            <a className="featured-watchbutton" href={`/watch/${item.id}`}>
+              ► Assistir
+            </a>
+            <a className="featured-mylistbutton" href={`/list/add/${item.id}`}>
+              + Minha Lista
+            </a>
           </div>
           <div className='featured-genres'>
             <strong>Gêneros: </strong> {generos.join(', ')}
