@@ -13,10 +13,13 @@ function App() {
     const dados = await HomeList.getHomeList();
     setMovieList(dados);
 
-    const originals = dados.find((i) => i.slug === 'originals');
-    const random = Math.floor(Math.random() * (originals.items.results.length - 1));
-    const chosen = originals.items.results[random];
-    const chosenInfo = await HomeList.getMovieInfo(chosen.id, 'tv');
+    let chosenInfo = {backdrop_path: null}
+    while (!chosenInfo.backdrop_path) {
+      const originals = dados.find((i) => i.slug === 'originals');
+      const random = Math.floor(Math.random() * (originals.items.results.length - 1));
+      const chosen = originals.items.results[random];
+      chosenInfo = await HomeList.getMovieInfo(chosen.id, 'tv');
+    }
 
     setFeatureData(chosenInfo);
   }
