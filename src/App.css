@@ -12,6 +12,11 @@ body {
     font-family:'Roboto', sans-serif;
 }
 
+footer {
+    margin: 50px;
+    text-align: center;
+}
+
 .lists {
     margin-top: -150px;
 }
