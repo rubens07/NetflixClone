@@ -1,3 +1,6 @@
+import React from 'react'
+import AddIcon from '@material-ui/icons/Add'
+import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 import './styles.css'
 
 const FeatureMovie = ({ item, size }) => {
@@ -28,10 +31,10 @@ const FeatureMovie = ({ item, size }) => {
           <div className='featured-description'>{resume}</div>
           <div className='featured-buttons'>
             <a className="featured-watchbutton" href={`/watch/${item.id}`}>
-              ► Assistir
+              <PlayArrowIcon /> Assistir
             </a>
             <a className="featured-mylistbutton" href={`/list/add/${item.id}`}>
-              + Minha Lista
+              <AddIcon /> Minha Lista
             </a>
           </div>
           <div className='featured-genres'>
