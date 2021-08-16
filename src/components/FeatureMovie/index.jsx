@@ -9,7 +9,6 @@ const FeatureMovie = ({ item, size }) => {
   let resume = item.overview
   if (resume.length > size) {
     resume = resume.substr(0, size).concat("...");
-    console.log(resume);
   }
 
   return (
